@@ -6,14 +6,12 @@ export const loadReviewAction = createAction<iReview[]>(
   actionTypes['review@load']
 );
 
-export const addReviewAction = createAction<iReview[]>(
-  actionTypes['review@add']
-);
+export const addReviewAction = createAction<iReview>(actionTypes['review@add']);
 
-export const addReviewUpdate = createAction<iReview[]>(
+export const updateReviewAction = createAction<iReview>(
   actionTypes['review@update']
 );
 
-export const deleteReviewAction = createAction<iReview[]>(
+export const deleteReviewAction = createAction<iReview>(
   actionTypes['review@delete']
 );

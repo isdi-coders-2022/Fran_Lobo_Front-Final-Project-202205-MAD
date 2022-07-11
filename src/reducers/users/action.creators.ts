@@ -4,10 +4,8 @@ import { iUser } from '../../interfaces/interfaces';
 
 export const loadUserAction = createAction<iUser[]>(actionTypes['user@load']);
 
-export const addUserAction = createAction<iUser[]>(actionTypes['user@add']);
+export const addUserAction = createAction<iUser>(actionTypes['user@add']);
 
-export const addUserUpdate = createAction<iUser[]>(actionTypes['user@update']);
+export const updateUserAction = createAction<iUser>(actionTypes['user@update']);
 
-export const deleteUserAction = createAction<iUser[]>(
-  actionTypes['user@delete']
-);
+export const deleteUserAction = createAction<iUser>(actionTypes['user@delete']);
