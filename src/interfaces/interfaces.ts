@@ -20,3 +20,8 @@ export interface iGame {
   url: string;
   image: string;
 }
+export interface iRouterItem {
+  path: string;
+  label: string;
+  page: JSX.Element;
+}
