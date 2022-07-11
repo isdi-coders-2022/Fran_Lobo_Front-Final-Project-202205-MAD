@@ -1,10 +1,10 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { iUser } from '../../interfaces/interfaces';
+import { iGame } from '../../interfaces/interfaces';
 import * as actions from './action.creators';
 
-const initialState = [] as iUser[];
+const initialState = [] as iGame[];
 
-export const userReducer = createReducer(initialState, (builder) =>
+export const gameReducer = createReducer(initialState, (builder) =>
   builder
     .addCase(actions.loadGameAction, (_state, action) => [...action.payload])
     .addCase(actions.addGameAction, (state, action) => [

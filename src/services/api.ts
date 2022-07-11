@@ -7,17 +7,17 @@ export class ApiGames {
   }
 
   async getAllReview(): Promise<iReview[]> {
-    const resp = await fetch(`${this.apiUrl}/review/`);
+    const resp = await fetch(`${this.apiUrl}review/`);
     return await resp.json();
   }
 
   async getOneReview(id: iReview['_id']): Promise<iReview> {
-    const resp = await fetch(`${this.apiUrl}/review/` + id);
+    const resp = await fetch(`${this.apiUrl}review/` + id);
     return await resp.json();
   }
 
   async setOneReview(payload: iReview): Promise<iReview> {
-    const resp = await fetch(`${this.apiUrl}/review/`, {
+    const resp = await fetch(`${this.apiUrl}review/`, {
       method: 'POST',
       body: JSON.stringify(payload),
       headers: {
@@ -31,7 +31,7 @@ export class ApiGames {
     id: iReview['_id'],
     payload: iReview
   ): Promise<iReview> {
-    const resp = await fetch(`${this.apiUrl}/review/` + id, {
+    const resp = await fetch(`${this.apiUrl}review/` + id, {
       method: 'PATCH',
       body: JSON.stringify(payload),
       headers: {
@@ -42,24 +42,24 @@ export class ApiGames {
   }
 
   async deleteOneReview(id: iReview['_id']): Promise<iReview> {
-    const resp = await fetch(`${this.apiUrl}/review/` + id, {
+    const resp = await fetch(`${this.apiUrl}review/` + id, {
       method: 'DELETE',
     });
     return await resp.json();
   }
 
   async getAllUser(): Promise<iUser[]> {
-    const resp = await fetch(`${this.apiUrl}/user/`);
+    const resp = await fetch(`${this.apiUrl}user/`);
     return await resp.json();
   }
 
   async getOneUser(id: iUser['_id']): Promise<iUser> {
-    const resp = await fetch(`${this.apiUrl}/user/` + id);
+    const resp = await fetch(`${this.apiUrl}user/` + id);
     return await resp.json();
   }
 
   async setOneUser(payload: iUser): Promise<iUser> {
-    const resp = await fetch(`${this.apiUrl}/user/`, {
+    const resp = await fetch(`${this.apiUrl}user/`, {
       method: 'POST',
       body: JSON.stringify(payload),
       headers: {
@@ -70,7 +70,7 @@ export class ApiGames {
   }
 
   async updateOneUser(id: iUser['_id'], payload: iUser): Promise<iUser> {
-    const resp = await fetch(`${this.apiUrl}/user/` + id, {
+    const resp = await fetch(`${this.apiUrl}user/` + id, {
       method: 'PATCH',
       body: JSON.stringify(payload),
       headers: {
@@ -81,19 +81,19 @@ export class ApiGames {
   }
 
   async deleteOneUser(id: iUser['_id']): Promise<iUser> {
-    const resp = await fetch(`${this.apiUrl}/user/` + id, {
+    const resp = await fetch(`${this.apiUrl}user/` + id, {
       method: 'DELETE',
     });
     return await resp.json();
   }
 
   async getAllGame(): Promise<iGame[]> {
-    const resp = await fetch(`${this.apiUrl}/game/`);
+    const resp = await fetch(`${this.apiUrl}game/`);
     return await resp.json();
   }
 
   async getOneGame(id: iGame['_id']): Promise<iGame> {
-    const resp = await fetch(`${this.apiUrl}/game/` + id);
+    const resp = await fetch(`${this.apiUrl}game/` + id);
     return await resp.json();
   }
 }

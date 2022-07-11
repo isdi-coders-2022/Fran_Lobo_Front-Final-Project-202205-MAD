@@ -29,4 +29,5 @@ export interface iRouterItem {
 export interface iStore {
   users: iUser[];
   reviews: iReview[];
+  games: iGame[];
 }
