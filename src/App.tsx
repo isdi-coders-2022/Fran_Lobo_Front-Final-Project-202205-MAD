@@ -5,9 +5,8 @@ import { Layout } from './components/layout/layout';
 import { iRouterItem } from './interfaces/interfaces';
 import { loadUserAction } from './reducers/users/action.creators';
 import { loadReviewAction } from './reducers/reviews/action.creators';
+import { ApiGames } from './services/api';
 
-function App() {
-  return <div className="App"></div>;
-}
+function App() {}
 
 export default App;
