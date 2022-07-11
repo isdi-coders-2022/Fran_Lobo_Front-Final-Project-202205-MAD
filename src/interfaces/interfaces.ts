@@ -25,3 +25,8 @@ export interface iRouterItem {
   label: string;
   page: JSX.Element;
 }
+
+export interface iStore {
+  users: iUser[];
+  reviews: iReview[];
+}

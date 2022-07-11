@@ -4,7 +4,7 @@ import * as actions from './action.creators';
 
 const initialState = [] as iReview[];
 
-export const userReducer = createReducer(initialState, (builder) =>
+export const reviewReducer = createReducer(initialState, (builder) =>
   builder
     .addCase(actions.loadReviewAction, (_state, action) => [...action.payload])
     .addCase(actions.addReviewAction, (state, action) => [
