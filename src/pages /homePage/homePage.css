@@ -1,0 +1,14 @@
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+    justify-content: center;
+}
+
+.card {
+  width: 150px;
+  transform: rotate(var(--rotation));
+  transition: 0.15s ease-out;
+  margin: 14px;
+  margin-bottom: 28px;
+}
