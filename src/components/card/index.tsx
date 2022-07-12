@@ -8,10 +8,7 @@ export function Card({ game }: { game: iGame }) {
         <div className="card-inner">
           <span className="card-pin"></span>
           <div className="card-image">
-            <img
-              src="https://static1.disfrazzes.com/productos/juego-catan-coloniza-la-isla-de-catan-con-astucia-y-estrategia-142947.jpg"
-              alt="nombreDelJuego"
-            />
+            <img src={game.image} alt="nombreDelJuego" />
           </div>
           <div className="card-content">
             <div className="card-meta">
@@ -20,8 +17,8 @@ export function Card({ game }: { game: iGame }) {
                 <i className="ai-circle-triangle-right-fill"></i>
               </button>
             </div>
-            <h2 className="card-title">Catan</h2>
-            <span className="card-time">9.8/10</span>
+            <h2 className="card-title">{game.name}</h2>
+            {/*<span className="card-time">9.8/10</span>*/}
           </div>
         </div>
       </article>

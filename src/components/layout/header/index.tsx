@@ -8,7 +8,7 @@ export function Header({ navOptions }: { navOptions: iRouterItem[] }) {
   return (
     <header className="header">
       <div className="header-logo">
-        <img src="./images/Bluffing logo.jpeg" alt="" />
+        <img src="/images/Bluffing logo.jpeg" alt="" />
       </div>
       <div className="header-title">Home</div>
       <div className="header-buttons">
@@ -16,7 +16,7 @@ export function Header({ navOptions }: { navOptions: iRouterItem[] }) {
           <i className="ai-bell"></i>
         </button>
         <button className="avatar">
-          <img src="./images/Ejemplo.JPG" alt="" />
+          <img src="/images/Ejemplo.JPG" alt="" />
         </button>
       </div>
     </header>

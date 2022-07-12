@@ -1,3 +1,3 @@
-import 'rankingPage.css';
+import './rankingPage.css';
 
 export function RankingPage() {}

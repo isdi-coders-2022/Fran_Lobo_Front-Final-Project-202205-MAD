@@ -21,7 +21,7 @@ export function Layout({
         <section className="search">
           <div className="search-inner">
             <button className="search-button">
-              <img src="./images/lupa.png" className="lupa" alt="" />
+              <img src="/images/lupa.png" className="lupa" alt="" />
             </button>
             <input
               type="text"
