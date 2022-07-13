@@ -81,7 +81,6 @@ export class ApiGames {
       },
     });
     const data = await resp.json();
-    console.log('DATA FROM LOGIN', data);
 
     return data;
   }

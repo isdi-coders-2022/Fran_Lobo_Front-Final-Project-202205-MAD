@@ -31,11 +31,10 @@ export function LoginPage() {
     // dispatcher(loadReviewAction(reviews));
     // dispatcher(loadGameAction(games));
 
-    console.log(formData, 'DATOSSSSS');
     apiGames.loginUser(formData).then((user) => {
       dispatcher(loadUserAction(user));
       localStorage.setUser(user);
-      // navigate(`/`);
+      navigate(`/`);
     });
   };
 

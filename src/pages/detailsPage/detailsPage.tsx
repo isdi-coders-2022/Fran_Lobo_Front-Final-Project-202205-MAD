@@ -1,32 +1,28 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { NavBar } from '../../components/layout/nav-bar';
 import { ApiGames } from '../../services/api';
-import { List } from '../../components/list';
-import { iStore, iUser } from '../../interfaces/interfaces';
-import { store } from '../../store/store';
-import { useNavigate } from 'react-router-dom';
+import { iStore } from '../../interfaces/interfaces';
+import { loadUserAction } from '../../reducers/users/action.creators';
 
 export default function DetailsPage() {
   const { id } = useParams();
+  const dispatch = useDispatch();
   const games = useSelector((store: iStore) => store.games);
   const user = useSelector((store: iStore) => store.user);
   const game = games.find((item) => item._id === id);
   const apiGames = new ApiGames();
-  console.log(game?.url);
-
-  
-
 
   const addFavourite = () => {
-     apiGames.updateOneUser({user.id, user}).then((user) => {
-         // dispatcher(loadUserAction(user))
-     } }
+    apiGames.updateOneUser(user.userData).then((resp) => {
+      dispatch(loadUserAction({ ...user, userData: resp }));
+    });
   };
 
   return (
-    <div className="details-page">
-      <>
+    <>
+      {user && <h1>Si hay users</h1>}
+      {!user && <h1>No hay users</h1>}
+      <div className="details-page">
         <img
           onClick={addFavourite}
           src="/images/juego-de-mesa.png"
@@ -40,9 +36,6 @@ export default function DetailsPage() {
         <div>
           <p>Description: {game?.description}</p>
           <p>Instructions:</p>
-          {/* <video width="400" height="240" controls>
-            <source src={game?.url} type="video/mp4" />
-          </video> */}
 
           <iframe
             width="400"
@@ -54,7 +47,7 @@ export default function DetailsPage() {
             allowFullScreen
           ></iframe>
         </div>
-      </>
-    </div>
+      </div>
+    </>
   );
 }

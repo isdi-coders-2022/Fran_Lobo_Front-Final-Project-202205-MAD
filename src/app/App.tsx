@@ -6,8 +6,9 @@ import { iRouterItem } from '../interfaces/interfaces';
 import { loadReviewAction } from '../reducers/reviews/action.creators';
 import { ApiGames } from '../services/api';
 import { loadGameAction } from '../reducers/games/action.creators';
-import { LoginPage } from '../pages /loginPage/loginPage';
-import { Register } from '../pages /registerPage/RegisterPage';
+import { LoginPage } from '../pages/loginPage/loginPage';
+import { Register } from '../pages/registerPage/RegisterPage';
+import { loadUserAction } from '../reducers/users/action.creators';
 
 export function App() {
   const dispatcher = useDispatch();
@@ -17,16 +18,14 @@ export function App() {
     apiGames
       .getAllReview()
       .then((reviews) => dispatcher(loadReviewAction(reviews)));
-
     apiGames.getAllGame().then((games) => dispatcher(loadGameAction(games)));
-
-    //apiGames.getAllUser().then((users) => dispatcher(loadUserAction(users)));
+    // apiGames.getAllUser().then((users) => dispatcher(loadUserAction(users)));
   }, [apiGames, dispatcher]);
 
-  const HomePage = React.lazy(() => import('../pages /homePage/homePage'));
+  const HomePage = React.lazy(() => import('../pages/homePage/homePage'));
   // const RankingPage = React.lazy(() => import('./pages /rankingPage'));
   const DetailsPage = React.lazy(
-    () => import('../pages /detailsPage/detailsPage')
+    () => import('../pages/detailsPage/detailsPage')
   );
   // const FavouritePage = React.lazy(() => import('./pages /favouritePage'));
 

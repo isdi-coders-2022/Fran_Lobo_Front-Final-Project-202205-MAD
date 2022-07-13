@@ -3,6 +3,7 @@ export interface iUser {
   name: string;
   secondName: string;
   email: string;
+  password: string;
   avatar: string;
   playList: string[];
 }
