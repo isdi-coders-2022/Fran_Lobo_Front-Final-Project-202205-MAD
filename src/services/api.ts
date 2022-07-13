@@ -1,4 +1,4 @@
-import { iGame, iReview, iUser } from '../interfaces/interfaces';
+import { iGame, iReview, iUser, iUserApi } from '../interfaces/interfaces';
 
 export class ApiGames {
   apiUrl: string;
@@ -69,8 +69,25 @@ export class ApiGames {
     return await resp.json();
   }
 
-  async updateOneUser(id: iUser['_id'], payload: iUser): Promise<iUser> {
-    const resp = await fetch(`${this.apiUrl}user/` + id, {
+  async loginUser(payload: {
+    email: string;
+    password: string;
+  }): Promise<iUserApi> {
+    const resp = await fetch(`${this.apiUrl}user/login`, {
+      method: 'POST',
+      body: JSON.stringify(payload),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    const data = await resp.json();
+    console.log('DATA FROM LOGIN', data);
+
+    return data;
+  }
+
+  async updateOneUser(payload: Partial<iUser>): Promise<iUser> {
+    const resp = await fetch(`${this.apiUrl}user/` + payload._id, {
       method: 'PATCH',
       body: JSON.stringify(payload),
       headers: {

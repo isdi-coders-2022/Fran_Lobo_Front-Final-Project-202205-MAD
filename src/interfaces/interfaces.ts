@@ -3,9 +3,14 @@ export interface iUser {
   name: string;
   secondName: string;
   email: string;
-  password: string;
   avatar: string;
   playList: string[];
+}
+
+export interface iUserApi {
+  id: String;
+  token: String;
+  userData: iUser;
 }
 export interface iReview {
   _id?: String;
@@ -27,7 +32,7 @@ export interface iRouterItem {
 }
 
 export interface iStore {
-  users: iUser[];
+  user: iUserApi;
   reviews: iReview[];
   games: iGame[];
 }

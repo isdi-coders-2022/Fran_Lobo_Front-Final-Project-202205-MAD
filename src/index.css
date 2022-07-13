@@ -18,6 +18,7 @@ li {
 *,
 *:after,
 *:before {
+  
   box-sizing: border-box;
 }
 
@@ -330,11 +331,11 @@ button {
   background-color: var(--c-yellow-500);
 }
 
-.playlists {
+/*.playlists {
   margin-top: 1.5rem;
   display: flex;
   padding: 2rem 0.5rem;
-}
+}*/
 
 .currently-playing {
   padding: 2rem 0.5rem;
@@ -601,4 +602,8 @@ button {
   border-color: var(--c-gray-900);
   background-color: var(--c-yellow-500);
   color: var(--c-gray-900);
-}/*# sourceMappingURL=home.css.map */
+}
+.favouriteButton img{
+  width: 100px;
+ }
+

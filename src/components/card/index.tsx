@@ -12,7 +12,7 @@ export function Card({ game }: { game: iGame }) {
           </div>
           <div className="card-content">
             <div className="card-meta">
-              <span className="card-meta-number">DEVIR</span>
+              <span className="card-meta-number"></span>
               <button className="card-meta-button">
                 <i className="ai-circle-triangle-right-fill"></i>
               </button>

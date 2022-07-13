@@ -1,6 +1,6 @@
 import { iGame } from '../../interfaces/interfaces';
 
-export function FavouritePage() {
+/*export function FavouritePage() {
   async function handlerAddAndModify(game: iGame) {
     const sameGame = games.find((game) => game.idGame === game.id);
     if (sameGame === undefined) {
@@ -12,4 +12,4 @@ export function FavouritePage() {
       addMatch(newMatch);
     }
   }
-}
+}*/

@@ -1,17 +1,14 @@
-import { SyntheticEvent, useMemo, useState } from 'react';
+import { SyntheticEvent, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { loadLoggedUsersAction } from '../../reducers/logged-user/action.creators';
-import { loadGameAction } from '../../reducers/games/action.creators'; 
-import { loadReviewAction } from '../../reducers/reviews/action.creators'; 
+import { Link, useNavigate } from 'react-router-dom';
+import { loadUserAction } from '../../reducers/users/action.creators';
 import { ApiGames } from '../../services/api';
-import { LocalStoreService } from '../../services/local-storage';
+import { LocalStoreService } from '../../services/localStorage';
 
-export default function LoginPage() {
+export function LoginPage() {
   const localStorage = new LocalStoreService();
-
+  const apiGames = new ApiGames();
   const dispatcher = useDispatch();
-  const apiChat = useMemo(() => new ApiChat(), []);
 
   const navigate = useNavigate();
   const initialState = { email: '', password: '' };
@@ -25,37 +22,64 @@ export default function LoginPage() {
 
   const handleSubmit = async (ev: SyntheticEvent) => {
     ev.preventDefault();
-    const resp = await apiChat.login(formData);
-    const games = await apiChat.getAllRoomsByUser(resp.user._id, resp.token);
-    const reviews = await apiChat.getAllUsers(resp.user._id, resp.token);
 
-    let user = resp.user;
-    user = { ...user, token: resp.token };
+    // const resp = await apiGames.loginUser;
+    // const reviews = await apiGames.getAllReview();
+    // const games = await apiGames.getAllGame();
 
-    dispatcher(loadLoggedUsersAction([user]));
-    dispatcher(loadUsersAction(reviews));
-    dispatcher(loadRoomsAction(games);
+    // dispatcher(loadLoggedUsersAction([user]));
+    // dispatcher(loadReviewAction(reviews));
+    // dispatcher(loadGameAction(games));
 
-    // const users = await apiChat.getAllUsers(resp.user._id, resp.token);
-    // const otherUsers = users.filter(user => user._id !== resp.user._id);
-
-    // const usersArray = [user, ...otherUsers];
-
-    localStorage.setUser(user);
-    // localStorage.setRooms(rooms);
-
-    navigate(`/`);
+    console.log(formData, 'DATOSSSSS');
+    apiGames.loginUser(formData).then((user) => {
+      dispatcher(loadUserAction(user));
+      localStorage.setUser(user);
+      // navigate(`/`);
+    });
   };
 
   return (
-    <>
-      <form onSubmit={handleSubmit} className="login-form">
-        <label htmlFor="">Email</label>
-        <input type="email" name="email" onChange={handleChange} />
-        <label htmlFor="">Password</label>
-        <input type="password" name="password" onChange={handleChange} />
-        <button type="submit">Login</button>
+    <div>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <div>
+            <label htmlFor="">Email</label>
+          </div>
+          <div>
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+            />
+          </div>
+        </div>
+        <div>
+          <div>
+            <label htmlFor="">Password</label>
+          </div>
+          <div>
+            <input
+              type="password"
+              value={formData.password}
+              name="password"
+              onChange={handleChange}
+            />
+          </div>
+        </div>
+        <div>
+          <div>
+            <button type="submit">Login</button>
+          </div>
+        </div>
+        <p>Don´t you have an account? </p>
+        <div>
+          <Link to={'/register'}>
+            <button type="button">Create Account</button>
+          </Link>
+        </div>
       </form>
-    </>
+    </div>
   );
 }
