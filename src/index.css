@@ -18,6 +18,7 @@ li {
 *,
 *:after,
 *:before {
+  
   box-sizing: border-box;
 }
 
@@ -330,11 +331,11 @@ button {
   background-color: var(--c-yellow-500);
 }
 
-.playlists {
+/*.playlists {
   margin-top: 1.5rem;
   display: flex;
   padding: 2rem 0.5rem;
-}
+}*/
 
 .currently-playing {
   padding: 2rem 0.5rem;
@@ -373,7 +374,8 @@ button {
   transform: translatey(-4px);
 }
 .card.horizontal {
-  width: 100%;
+  margin-top: 60px;
+  width: 80%;
   transform: rotate(3deg);
 }
 .card.horizontal .card-inner {
@@ -510,6 +512,7 @@ button {
 .card-title {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+
 }
 
 .card-meta {
@@ -601,4 +604,18 @@ button {
   border-color: var(--c-gray-900);
   background-color: var(--c-yellow-500);
   color: var(--c-gray-900);
-}/*# sourceMappingURL=home.css.map */
+}
+.favouriteButton img{
+  width: 100px;
+ }
+
+.nameGame{
+text-decoration: none;
+color: #1d1d1d;
+text-align: center;
+}
+.deleteLogo{
+
+ 
+  
+}

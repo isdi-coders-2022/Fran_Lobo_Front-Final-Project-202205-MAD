@@ -1,0 +1,24 @@
+.favouriteButton{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 3px solid rgb(84, 9, 9);
+    box-shadow: 0 8px 10px -4px rgb(0 0 0 / 20%);
+    transform-origin: center center;
+    transition: 0.15s ease;
+    cursor: pointer;
+    margin-top: 25px;
+ 
+}
+.wrappperFavoriteButton{
+    display: flex;
+    justify-content: space-between;
+}
+.body{
+  min-height: 800px;
+}

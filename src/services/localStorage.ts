@@ -1,4 +1,4 @@
-import { iGame, iReview, iUser } from '../interfaces/interfaces';
+import { iUserApi } from '../interfaces/interfaces';
 
 export class LocalStoreService {
   user: string;
@@ -10,13 +10,13 @@ export class LocalStoreService {
     this.rooms = 'Rooms';
   }
 
-  getUser(): iUser {
+  getUser(): iUserApi {
     return localStorage.getItem(this.user)
       ? JSON.parse(localStorage.getItem(this.user) as string)
       : '';
   }
 
-  setUser(user: iUser) {
+  setUser(user: iUserApi) {
     localStorage.setItem(this.user, JSON.stringify(user));
   }
 
@@ -24,31 +24,9 @@ export class LocalStoreService {
     localStorage.removeItem(this.user);
   }
 
-  getUsers(): iUser[] {
+  getUsers(): iUserApi[] {
     return localStorage.getItem(this.users)
       ? JSON.parse(localStorage.getItem(this.users) as string)
       : '';
-  }
-
-  setUsers(users: iUser[]) {
-    localStorage.setItem(this.users, JSON.stringify(users));
-  }
-
-  removeUsers() {
-    localStorage.removeItem(this.users);
-  }
-
-  getRooms(): iGame[] {
-    return localStorage.getItem(this.)
-      ? JSON.parse(localStorage.getItem(this.game) as string)
-      : '';
-  }
-
-  setRooms(rooms: iGame[]) {
-    localStorage.setItem(this.rooms, JSON.stringify(games));
-  }
-
-  removeRooms() {
-    localStorage.removeItem(this.games);
   }
 }

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { iRouterItem } from '../../../interfaces/interfaces';
 
 export function Header({ navOptions }: { navOptions: iRouterItem[] }) {
@@ -7,14 +8,19 @@ export function Header({ navOptions }: { navOptions: iRouterItem[] }) {
   );
   return (
     <header className="header">
-      <div className="header-logo">
-        <img src="/images/Bluffing logo.jpeg" alt="" />
-      </div>
-      <div className="header-title">Home</div>
+      <Link to={'home'}>
+        <div className="header-logo">
+          <img src="/images/Bluffing logo.jpeg" alt="" />
+        </div>
+      </Link>
+      <div className="header-title"></div>
       <div className="header-buttons">
-        <button className="notifications">
-          <i className="ai-bell"></i>
-        </button>
+        <Link to={'login'}>
+          <button className="notifications">
+            <i className="ai-bell"></i>
+          </button>{' '}
+        </Link>
+
         <button className="avatar">
           <img src="/images/Ejemplo.JPG" alt="" />
         </button>
