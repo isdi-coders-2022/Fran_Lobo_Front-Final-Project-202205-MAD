@@ -4,8 +4,7 @@ import { Search } from '../../components/layout/search';
 
 import { List } from '../../components/list';
 import { iStore } from '../../interfaces/interfaces';
-import { loadGameAction } from '../../reducers/games/action.creators';
-import { loadReviewAction } from '../../reducers/reviews/action.creators';
+
 import { ApiGames } from '../../services/api';
 import './homePage.css';
 export default function HomePage() {

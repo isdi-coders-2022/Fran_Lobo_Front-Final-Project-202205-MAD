@@ -12,6 +12,7 @@ import { loadUserAction } from '../reducers/users/action.creators';
 import InfoPage from '../pages/infoPage/infoPage';
 import { FavouritePage } from '../pages/favouritePage/favouritePage';
 import { LocalStoreService } from '../services/localStorage';
+import RankingPage from '../pages/rankingPage/rankingPage';
 
 export function App() {
   const dispatcher = useDispatch();
@@ -46,6 +47,7 @@ export function App() {
     { path: '/create', label: 'Create', page: <DetailsPage /> },
     { path: '/info', label: 'Info', page: <InfoPage /> },
     { path: '/favourites', label: 'favourites', page: <FavouritePage /> },
+    { path: '/ranking', label: 'ranking', page: <RankingPage /> },
     { path: '*', label: '', page: <HomePage /> },
   ];
   return (

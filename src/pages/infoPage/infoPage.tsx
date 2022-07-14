@@ -1,6 +1,6 @@
 import { Navigate } from 'react-router-dom';
 import { NavBar } from '../../components/layout/nav-bar';
-import './infoPage.css';
+
 export default function InfoPage() {
   return (
     <>

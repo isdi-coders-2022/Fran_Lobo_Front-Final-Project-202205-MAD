@@ -374,7 +374,8 @@ button {
   transform: translatey(-4px);
 }
 .card.horizontal {
-  width: 100%;
+  margin-top: 60px;
+  width: 80%;
   transform: rotate(3deg);
 }
 .card.horizontal .card-inner {
@@ -612,4 +613,9 @@ button {
 text-decoration: none;
 color: #1d1d1d;
 text-align: center;
+}
+.deleteLogo{
+
+ 
+  
 }
