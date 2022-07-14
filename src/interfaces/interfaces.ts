@@ -1,5 +1,5 @@
 export interface iUser {
-  _id?: String;
+  _id?: string;
   name: string;
   secondName: string;
   email: string;
@@ -9,18 +9,18 @@ export interface iUser {
 }
 
 export interface iUserApi {
-  id: String;
-  token: String;
+  id: string;
+  token: string;
   userData: iUser;
 }
 export interface iReview {
-  _id?: String;
+  _id?: string;
   idUser: string;
   idGame: string;
   text: string;
 }
 export interface iGame {
-  _id?: String;
+  _id?: string;
   name: string;
   description: string;
   url: string;

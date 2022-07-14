@@ -1,4 +1,4 @@
-import { iUser, iUserApi } from '../interfaces/interfaces';
+import { iUserApi } from '../interfaces/interfaces';
 
 export class LocalStoreService {
   user: string;

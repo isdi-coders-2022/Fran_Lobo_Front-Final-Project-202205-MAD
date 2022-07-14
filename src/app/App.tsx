@@ -9,6 +9,7 @@ import { loadGameAction } from '../reducers/games/action.creators';
 import { LoginPage } from '../pages/loginPage/loginPage';
 import { Register } from '../pages/registerPage/RegisterPage';
 import { loadUserAction } from '../reducers/users/action.creators';
+import InfoPage from '../pages/infoPage/infoPage';
 
 export function App() {
   const dispatcher = useDispatch();
@@ -34,7 +35,8 @@ export function App() {
     { path: '/login', label: 'Login', page: <LoginPage /> },
     { path: '/register', label: 'Register', page: <Register /> },
     { path: '/details/:id', label: 'Game', page: <DetailsPage /> },
-    //{ path: '/create', label: 'Create Robot', page: <DetailsPage /> },
+    { path: '/create', label: 'Create', page: <DetailsPage /> },
+    { path: '/info', label: 'Info', page: <InfoPage /> },
     //{ path: '/edit/:id', label: 'Edit Robot', page: <FavouritePage /> },
     { path: '*', label: '', page: <HomePage /> },
   ];

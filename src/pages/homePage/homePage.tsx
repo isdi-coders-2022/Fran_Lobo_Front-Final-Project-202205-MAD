@@ -15,7 +15,6 @@ export default function HomePage() {
   const load = async () => {
     // const reviews = await apiGames.getAllReview();
     // const games = await apiGames.getAllGame();
-    //dispatcher(loadLoggedUsersAction([user]));
     // dispatcher(loadReviewAction(reviews));
     // dispatcher(loadGameAction(games));
   };

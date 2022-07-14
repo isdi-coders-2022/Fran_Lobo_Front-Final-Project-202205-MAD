@@ -1,3 +1,4 @@
+import { log } from 'console';
 import { iGame, iReview, iUser, iUserApi } from '../interfaces/interfaces';
 
 export class ApiGames {
@@ -85,12 +86,14 @@ export class ApiGames {
     return data;
   }
 
-  async updateOneUser(payload: Partial<iUser>): Promise<iUser> {
+  async updateOneUser(payload: Partial<iUser>, token: string): Promise<iUser> {
+    console.log('PAYLOAD', payload);
     const resp = await fetch(`${this.apiUrl}user/` + payload._id, {
       method: 'PATCH',
       body: JSON.stringify(payload),
       headers: {
         'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
       },
     });
     return await resp.json();

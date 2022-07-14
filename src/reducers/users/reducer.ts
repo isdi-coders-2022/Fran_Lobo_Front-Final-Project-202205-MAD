@@ -11,11 +11,11 @@ export const userReducer = createReducer(initialState, (builder) =>
     //   ...state,
     //   action.payload,
     // ])
-    // .addCase(actions.updateUserAction, (state, action) =>
-    //   state.map((item) =>
-    //     item._id === action.payload._id ? action.payload : item
-    //   )
-    // )
+    .addCase(actions.updateUserAction, (state, action) => ({
+      ...state,
+      userData: action.payload,
+    }))
+
     // .addCase(actions.deleteUserAction, (state, action) =>
     //   state.filter((item) => item._id !== action.payload._id)
     // )

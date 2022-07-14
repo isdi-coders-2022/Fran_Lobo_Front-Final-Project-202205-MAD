@@ -1,18 +1,20 @@
+import { Link } from 'react-router-dom';
+
 export function NavBar() {
   return (
     <nav className="navigation">
-      <a href="./home.html" className="navigation-item active">
+      <Link to="home" className="navigation-item active">
         Home
-      </a>
-      <a href="./pages/ranking.html" className="navigation-item">
+      </Link>
+      <Link to="ranking" className="navigation-item">
         Ranking
-      </a>
-      <a href="./pages/ranking.html" className="navigation-item">
+      </Link>
+      <Link to="" className="navigation-item">
         Favourite
-      </a>
-      <a href="./pages/themes.html" className="navigation-item">
-        Themes
-      </a>
+      </Link>
+      <Link to="info" className="navigation-item">
+        + Info
+      </Link>
     </nav>
   );
 }
