@@ -511,6 +511,7 @@ button {
 .card-title {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+
 }
 
 .card-meta {
@@ -607,3 +608,8 @@ button {
   width: 100px;
  }
 
+.nameGame{
+text-decoration: none;
+color: #1d1d1d;
+text-align: center;
+}

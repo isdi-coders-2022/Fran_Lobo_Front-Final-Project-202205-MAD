@@ -10,18 +10,26 @@ import { LoginPage } from '../pages/loginPage/loginPage';
 import { Register } from '../pages/registerPage/RegisterPage';
 import { loadUserAction } from '../reducers/users/action.creators';
 import InfoPage from '../pages/infoPage/infoPage';
+import { FavouritePage } from '../pages/favouritePage/favouritePage';
+import { LocalStoreService } from '../services/localStorage';
 
 export function App() {
   const dispatcher = useDispatch();
   const apiGames = useMemo(() => new ApiGames(), []);
+  const localStorageService = useMemo(() => new LocalStoreService(), []);
 
   useEffect(() => {
     apiGames
       .getAllReview()
       .then((reviews) => dispatcher(loadReviewAction(reviews)));
     apiGames.getAllGame().then((games) => dispatcher(loadGameAction(games)));
-    // apiGames.getAllUser().then((users) => dispatcher(loadUserAction(users)));
-  }, [apiGames, dispatcher]);
+    const localStorageUserData = localStorageService.getUser();
+    if (localStorageUserData) {
+      apiGames.loginWithToken(localStorageUserData.token).then((data) => {
+        dispatcher(loadUserAction(data));
+      });
+    }
+  }, [apiGames, dispatcher, localStorageService]);
 
   const HomePage = React.lazy(() => import('../pages/homePage/homePage'));
   // const RankingPage = React.lazy(() => import('./pages /rankingPage'));
@@ -37,7 +45,7 @@ export function App() {
     { path: '/details/:id', label: 'Game', page: <DetailsPage /> },
     { path: '/create', label: 'Create', page: <DetailsPage /> },
     { path: '/info', label: 'Info', page: <InfoPage /> },
-    //{ path: '/edit/:id', label: 'Edit Robot', page: <FavouritePage /> },
+    { path: '/favourites', label: 'favourites', page: <FavouritePage /> },
     { path: '*', label: '', page: <HomePage /> },
   ];
   return (

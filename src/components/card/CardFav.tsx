@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom';
 import { iGame } from '../../interfaces/interfaces';
 
-export function Card({ game }: { game: iGame }) {
+export function CardFav({ game }: { game: iGame }) {
+  const handleDelete = () => {
+    console.log('delete');
+  };
   return (
     <Link className="nameGame" to={`details/${game._id}`}>
       <article className="card">
@@ -18,6 +21,8 @@ export function Card({ game }: { game: iGame }) {
               </button>
             </div>
             <h2 className="card-title">{game.name}</h2>
+            <span>🗑</span>
+            {/*<span className="card-time">9.8/10</span>*/}
           </div>
         </div>
       </article>

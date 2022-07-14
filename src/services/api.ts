@@ -86,6 +86,19 @@ export class ApiGames {
     return data;
   }
 
+  async loginWithToken(token: string): Promise<iUserApi> {
+    const resp = await fetch(`${this.apiUrl}user/loginWithToken`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    const data = await resp.json();
+
+    return data;
+  }
+
   async updateOneUser(payload: Partial<iUser>, token: string): Promise<iUser> {
     console.log('PAYLOAD', payload);
     const resp = await fetch(`${this.apiUrl}user/` + payload._id, {

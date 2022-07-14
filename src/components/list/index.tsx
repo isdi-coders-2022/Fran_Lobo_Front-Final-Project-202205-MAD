@@ -1,5 +1,6 @@
 import { iGame } from '../../interfaces/interfaces';
 import { Card } from '../card';
+import { CardFav } from '../card/CardFav';
 
 export function List({ data }: { data: iGame[] }) {
   return (
