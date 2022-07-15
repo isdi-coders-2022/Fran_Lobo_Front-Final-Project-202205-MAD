@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import { useSelector } from 'react-redux';
 import { iRouterItem, iStore } from '../../interfaces/interfaces';
-import { Footer } from './footer';
+
 import { Header } from './header';
 
 export function Layout({
@@ -24,7 +24,6 @@ export function Layout({
 
         <section className="playlists"></section>
         <main>{children}</main>
-        {/*<Footer />*/}
       </div>
     </>
   );

@@ -1,5 +1,4 @@
 import { BrowserRouter } from 'react-router-dom';
-import { Header } from '../../components/layout/header/index';
 import {
   iGame,
   iReview,
@@ -11,7 +10,7 @@ import { gameReducer } from '../../reducers/games/reducer';
 import { reviewReducer } from '../../reducers/reviews/reducer';
 import { userReducer } from '../../reducers/users/reducer';
 import { render, screen } from '../../utils/test-utils';
-import { NavBar } from './nav-bar';
+import { Search } from './search';
 const reducer = {
   user: userReducer,
   game: gameReducer,
@@ -43,11 +42,11 @@ describe('Given the Nav-bar component', () => {
     test('Then it should render the component', async () => {
       render(
         <BrowserRouter>
-          <NavBar />
+          <Search />
         </BrowserRouter>,
         { preloadedState, reducer }
       );
-      const display = screen.getByText(/Ranking/i);
+      const display = screen.getByText(/Search your Game/i);
       expect(display).toBeInTheDocument();
     });
   });

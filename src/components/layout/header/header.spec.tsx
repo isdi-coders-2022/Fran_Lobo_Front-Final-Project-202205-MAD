@@ -1,17 +1,17 @@
 import { BrowserRouter } from 'react-router-dom';
-import { Header } from '../../components/layout/header/index';
+import { Header } from './';
 import {
   iGame,
   iReview,
   iStore,
   iUser,
   iUserApi,
-} from '../../interfaces/interfaces';
-import { gameReducer } from '../../reducers/games/reducer';
-import { reviewReducer } from '../../reducers/reviews/reducer';
-import { userReducer } from '../../reducers/users/reducer';
-import { render, screen } from '../../utils/test-utils';
-import { NavBar } from './nav-bar';
+} from '../../../interfaces/interfaces';
+import { gameReducer } from '../../../reducers/games/reducer';
+import { reviewReducer } from '../../../reducers/reviews/reducer';
+import { userReducer } from '../../../reducers/users/reducer';
+import { render, screen } from '../../../utils/test-utils';
+import { NavBar } from '../nav-bar';
 const reducer = {
   user: userReducer,
   game: gameReducer,
@@ -38,17 +38,17 @@ const preloadedState: iStore = {
   reviews: [] as iReview[],
 };
 
-describe('Given the Nav-bar component', () => {
+describe('Given the Header component', () => {
   describe('When it is called', () => {
     test('Then it should render the component', async () => {
       render(
         <BrowserRouter>
-          <NavBar />
+          <Header />
         </BrowserRouter>,
         { preloadedState, reducer }
       );
-      const display = screen.getByText(/Ranking/i);
-      expect(display).toBeInTheDocument();
+      const element = screen.getByTestId('1');
+      expect(element).toBeInTheDocument();
     });
   });
 });

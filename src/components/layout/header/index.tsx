@@ -1,13 +1,9 @@
 import { Link } from 'react-router-dom';
 import { iRouterItem } from '../../../interfaces/interfaces';
 
-export function Header({ navOptions }: { navOptions: iRouterItem[] }) {
-  navOptions = navOptions.filter((item) => (item.path !== '*' ? item : ''));
-  navOptions = navOptions.filter((item) =>
-    item.path !== '/details/:id' ? item : ''
-  );
+export function Header() {
   return (
-    <header className="header">
+    <header data-testid="1" className="header">
       <Link to={'home'}>
         <div className="header-logo">
           <img src="/images/Bluffing logo.jpeg" alt="" />
