@@ -16,7 +16,7 @@ export function Layout({
   return (
     <>
       <div className="phone">
-        <Header navOptions={navOptions} />
+        <Header />
         <section className="title">
           <h1>BLUFFING</h1>
           <p>Explore millions of games according to your taste</p>

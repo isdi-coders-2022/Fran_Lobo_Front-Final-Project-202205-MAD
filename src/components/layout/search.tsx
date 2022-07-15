@@ -1,7 +1,7 @@
 export function Search() {
   return (
     <section className="search">
-      <div className="search-inner">
+      <div data-testid="1" className="search-inner">
         <button className="search-button">
           <img src="/images/lupa.png" className="lupa" alt="" />
         </button>

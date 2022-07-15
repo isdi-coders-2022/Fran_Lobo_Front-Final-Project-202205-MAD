@@ -9,44 +9,40 @@ import {
 import { gameReducer } from '../../reducers/games/reducer';
 import { reviewReducer } from '../../reducers/reviews/reducer';
 import { userReducer } from '../../reducers/users/reducer';
+
 import { render, screen } from '../../utils/test-utils';
-import { Search } from './search';
-const reducer = {
-  user: userReducer,
-  game: gameReducer,
-  review: reviewReducer,
-};
-const mockUser: iUser = {
-  name: 'test',
-  secondName: 'test',
-  email: 'test@test.test',
-  password: 'test',
-  avatar: 'testUrl',
-  playList: [],
+import { CardFav } from './CardFav';
+
+const mockGame: iGame = {
+  _id: '1',
+  name: 'pepe',
+  description: 'vamos que nos vamos,',
+  url: 'franciscoLobo',
+  image: 'ewlkjdlskjcewjf',
 };
 
-const mockedUserApi: iUserApi = {
-  id: '1',
-  token: '12',
-  userData: mockUser,
+const reducer = {
+  user: userReducer,
+  games: gameReducer,
+  reviews: reviewReducer,
 };
 
 const preloadedState: iStore = {
-  user: mockedUserApi as iUserApi,
+  user: mockGame as unknown as iUserApi,
   games: [] as iGame[],
   reviews: [] as iReview[],
 };
 
-describe('Given the Nav-bar component', () => {
+describe('Given the UserCard component', () => {
   describe('When it is called', () => {
     test('Then it should render the component', async () => {
       render(
         <BrowserRouter>
-          <Search />
+          <CardFav game={mockGame} />
         </BrowserRouter>,
         { preloadedState, reducer }
       );
-      const element = screen.getByTestId('1');
+      const element = screen.getByText(/pepe/i);
       expect(element).toBeInTheDocument();
     });
   });
