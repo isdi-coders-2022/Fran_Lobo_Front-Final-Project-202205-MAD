@@ -1,11 +1,5 @@
 import { BrowserRouter } from 'react-router-dom';
-import {
-  iGame,
-  iReview,
-  iStore,
-  iUser,
-  iUserApi,
-} from '../../interfaces/interfaces';
+import { iGame, iReview, iStore, iUserApi } from '../../interfaces/interfaces';
 import { gameReducer } from '../../reducers/games/reducer';
 import { reviewReducer } from '../../reducers/reviews/reducer';
 import { userReducer } from '../../reducers/users/reducer';
