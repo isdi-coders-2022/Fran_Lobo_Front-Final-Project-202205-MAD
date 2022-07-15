@@ -6,7 +6,7 @@ export default function InfoPage() {
     <>
       <NavBar></NavBar>
       <h1>Info</h1>
-      <div className="shopGame">
+      <div data-testid="1" className="shopGame">
         <h2>ZACATRUS</h2>
         <img src="https://zaragozaguia.com/wp-content/uploads/2021/01/Zacatrus-Zaragoza.jpg"></img>
         <h3>C. de Fernández de los Ríos, 57</h3>

@@ -1,16 +1,11 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { NavBar } from '../../components/layout/nav-bar';
 import { Search } from '../../components/layout/search';
 
 import { List } from '../../components/list';
 import { iStore } from '../../interfaces/interfaces';
-
-import { ApiGames } from '../../services/api';
 import './homePage.css';
 export default function HomePage() {
-  const apiGames = new ApiGames();
-  const dispatcher = useDispatch();
-
   const load = async () => {
     // const reviews = await apiGames.getAllReview();
     // const games = await apiGames.getAllGame();

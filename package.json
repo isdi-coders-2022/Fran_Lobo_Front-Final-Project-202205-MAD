@@ -44,19 +44,22 @@
       "last 1 safari version"
     ]
   },
-  "jest": {
-    "coveragePathIgnorePatterns": [
-      "<rootDir>/src/utils",
-      "<rootDir>/src/index.tsx",
-      "<rootDir>/src/reportWebVitals.ts",
-      "<rootDir>/src/interfaces",
-      "<rootDir>/src/app"
-    ]
-  },
   "devDependencies": {
     "eslint-config-prettier": "^8.5.0"
   },
   "prettier": {
     "singleQuote": true
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}",
+      "!src/app/App.tsx",
+      "!src/index.tsx",
+      "!src/utils/test-utils.tsx",
+      "!src/reportWebVitals.ts",
+      "!src/reducers/**/action.types.ts",
+      "!src/interfaces/*.ts",
+      "!src/react-app-env.d.ts"
+    ]
   }
 }
