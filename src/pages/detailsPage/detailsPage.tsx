@@ -32,7 +32,7 @@ export default function DetailsPage() {
 
   return (
     <>
-      <div className="details-page">
+      <div data-testid="1" className="details-page">
         <div className="wrappperFavoriteButton">
           <h1>{game?.name}</h1>
           <img

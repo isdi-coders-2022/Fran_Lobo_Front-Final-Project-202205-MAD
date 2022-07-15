@@ -1,6 +1,6 @@
 import { createAction } from '@reduxjs/toolkit';
 import { actionTypes } from './action.types';
-import { iGame, iUser } from '../../interfaces/interfaces';
+import { iGame } from '../../interfaces/interfaces';
 
 export const loadGameAction = createAction<iGame[]>(actionTypes['game@load']);
 

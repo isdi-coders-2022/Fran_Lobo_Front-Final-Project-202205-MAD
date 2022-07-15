@@ -23,8 +23,8 @@ function render(
         store={configureStore({
           reducer: {
             user: userReducer,
-            review: reviewReducer,
-            game: gameReducer,
+            reviews: reviewReducer,
+            games: gameReducer,
           },
           preloadedState,
         })}
