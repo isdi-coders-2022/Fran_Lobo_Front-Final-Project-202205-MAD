@@ -1,4 +1,3 @@
-import { log } from 'console';
 import { iGame, iReview, iUser, iUserApi } from '../interfaces/interfaces';
 
 export class ApiGames {
