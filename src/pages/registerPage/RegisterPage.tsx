@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { LocalStoreService } from '../../services/localStorage';
 
-export function Register() {
+export function RegisterPage() {
   const navigate = useNavigate();
   const initialState = { email: '', password: '' };
   const [formData, setFormData] = useState(initialState);
@@ -35,7 +35,7 @@ export function Register() {
     <div>
       <form onSubmit={handleSubmit}>
         <div>
-          <h1>REGISTER</h1>
+          <h1 data-testid="1">REGISTER</h1>
           <div>
             <label htmlFor="">Name:</label>
           </div>

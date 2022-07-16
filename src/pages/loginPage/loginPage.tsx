@@ -40,7 +40,7 @@ export function LoginPage() {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form data-testid="1" onSubmit={handleSubmit}>
         <div>
           <div>
             <label htmlFor="">Email</label>
