@@ -1,7 +1,6 @@
 import { useSelector } from 'react-redux';
 import { CardFav } from '../../components/card/CardFav';
 import { NavBar } from '../../components/layout/nav-bar';
-import { List } from '../../components/list';
 import { iStore } from '../../interfaces/interfaces';
 
 export function FavouritePage() {
@@ -17,7 +16,7 @@ export function FavouritePage() {
   }
 
   const games = allGames.filter((game) =>
-    user.playList.some((id) => game._id === id)
+    user.playList?.some((id) => game._id === id)
   );
 
   console.log(games);
@@ -25,9 +24,7 @@ export function FavouritePage() {
   return (
     <>
       <NavBar></NavBar>
-
       <h1>Favourites:</h1>
-
       <ul>
         {games.map((item) => (
           <li key={item._id as string}>

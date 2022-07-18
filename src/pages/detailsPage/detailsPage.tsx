@@ -1,11 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { ApiGames } from '../../services/api';
-import { iGame, iStore, iUser } from '../../interfaces/interfaces';
-import {
-  loadUserAction,
-  updateUserAction,
-} from '../../reducers/users/action.creators';
+import { iStore } from '../../interfaces/interfaces';
+import { updateUserAction } from '../../reducers/users/action.creators';
 import './detailsPage.css';
 
 export default function DetailsPage() {
@@ -20,14 +17,16 @@ export default function DetailsPage() {
     // CREAMOS UN OBJETO CON LA INFORMACIÓN ACTUALIZADA DEL USUARIO, POR QUE NUESTRO BACK USA UN UPDATE GENERAL
     const updatedUserInfo = {
       ...user.userData,
-      playList: [...user.userData.playList, game?._id as string],
+      playList: [...(user.userData.playList as string[]), game?._id as string],
     };
     // LLAMAMOS A LA API PARA QUE ACTUALICE LA INFORMACIÓN DEL USUARIO
-    apiGames.updateOneUser(updatedUserInfo, user.token).then((resp) => {
-      console.log(resp);
-      // CON LA RESPUESTA (USUARIO ACTIALIZADO) LLAMAMOS AL DISPATCHER CON LA ACCIÓN DE ACTUALIZAR USUARIO
-      dispatch(updateUserAction(resp));
-    });
+    apiGames
+      .updateOneUser(updatedUserInfo, user.token as string)
+      .then((resp) => {
+        console.log(resp);
+        // CON LA RESPUESTA (USUARIO ACTIALIZADO) LLAMAMOS AL DISPATCHER CON LA ACCIÓN DE ACTUALIZAR USUARIO
+        dispatch(updateUserAction(resp));
+      });
   };
 
   return (
@@ -37,7 +36,7 @@ export default function DetailsPage() {
           <h1>{game?.name}</h1>
           <img
             onClick={addFavourite}
-            src="/images/estrella.png"
+            src="/images/favorito.png"
             className="favouriteButton"
             alt=""
           />
@@ -46,8 +45,9 @@ export default function DetailsPage() {
         <img className="imageGame" src={game?.image} alt={game?.name} />
 
         <div>
-          <p>Description: {game?.description}</p>
-          <p>Instructions:</p>
+          <p className="description">Description:</p>
+          <p> {game?.description}</p>
+          <p className="instructions">Instructions:</p>
 
           <iframe
             width="400"

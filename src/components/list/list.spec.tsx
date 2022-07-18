@@ -42,7 +42,7 @@ describe('Given the List component', () => {
 
       render(
         <BrowserRouter>
-          <Layout children={undefined} navOptions={[]}>
+          <Layout>
             <List data={[]} />
           </Layout>
         </BrowserRouter>,

@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { iRouterItem } from '../../../interfaces/interfaces';
 
 export function Header() {
   return (
@@ -16,10 +15,11 @@ export function Header() {
             <i className="ai-bell"></i>
           </button>{' '}
         </Link>
-
-        <button className="avatar">
-          <img src="/images/Ejemplo.JPG" alt="" />
-        </button>
+        <Link to={'profile'}>
+          <button className="avatar">
+            <img src="/images/Ejemplo.JPG" alt="" />
+          </button>
+        </Link>
       </div>
     </header>
   );

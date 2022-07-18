@@ -15,7 +15,7 @@ import { reviewReducer } from '../../reducers/reviews/reducer';
 import { userReducer } from '../../reducers/users/reducer';
 
 import { render, screen } from '../../utils/test-utils';
-import { Register, RegisterPage } from './RegisterPage';
+import RegisterPage from './RegisterPage';
 
 describe('Given the HomePage component', () => {
   describe('when it is called', () => {

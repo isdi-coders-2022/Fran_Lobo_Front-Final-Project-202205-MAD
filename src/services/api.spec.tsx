@@ -1,5 +1,19 @@
 import { ApiGames } from './api';
 import { iGame, iReview, iUser, iUserApi } from '../interfaces/interfaces';
+const mockUser: iUser = {
+  _id: '123456',
+  name: 'pepe',
+  secondName: 'pepa',
+  email: 'pepe@pepe.com',
+  password: '232',
+  avatar: '234',
+  playList: [],
+};
+const mockUserApi: iUserApi = {
+  id: '',
+  token: 'string',
+  userData: mockUser,
+};
 
 describe('Given ApiGames', () => {
   const mockReview: iReview = {
@@ -64,10 +78,8 @@ describe('Given ApiGames', () => {
           }),
         });
         const result = await new ApiGames().updateOneReview(
-          mockNewReview._id,
-          mockNewReview.idGame,
-          mockNewReview.idUser,
-          mockNewReview.text
+          mockNewReview._id as string,
+          mockNewReview
         );
         expect(fetch).toBeCalled();
         expect(result).toEqual({
@@ -195,7 +207,8 @@ describe('Given ApiGames', () => {
           json: jest.fn().mockResolvedValue({}),
         });
         const result = await new ApiGames().deleteOneUser(
-          mockUser._id as string
+          mockUser._id as string,
+          'token'
         );
         expect(fetch).toBeCalled();
         expect(result).toEqual({});

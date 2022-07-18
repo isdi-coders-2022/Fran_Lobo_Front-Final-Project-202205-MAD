@@ -309,9 +309,9 @@ button {
 .navigation-item.active {
   font-weight: 800;
 }
-.navigation-item.active:before {
-  background-color: var(--c-yellow-500);
-}
+
+
+
 .navigation-item:before {
   content: "";
   display: block;
@@ -618,4 +618,10 @@ text-align: center;
   height: 45px;
  
   
+}
+.description{
+  font-weight: 800;
+}
+.instructions{
+  font-weight: 800;
 }
