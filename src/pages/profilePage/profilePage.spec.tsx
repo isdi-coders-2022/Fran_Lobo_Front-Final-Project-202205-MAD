@@ -14,9 +14,9 @@ import { reviewReducer } from '../../reducers/reviews/reducer';
 import { userReducer } from '../../reducers/users/reducer';
 
 import { render, screen } from '../../utils/test-utils';
-import RankingPage from './rankingPage';
+import ProfilePage from './profilePage';
 
-describe('Given the DetailsPage component', () => {
+describe('Given the LoginPage component', () => {
   describe('when it is called', () => {
     test('it should be rendered', () => {
       const mockGame: iGame = {
@@ -48,14 +48,13 @@ describe('Given the DetailsPage component', () => {
 
       render(
         <BrowserRouter>
-          <RankingPage />
+          <ProfilePage />
         </BrowserRouter>,
         { preloadedState, reducer }
       );
-      const display = screen.getByText(/Our last games/i);
+
+      const display = screen.getByText(/Second Name:/i);
       expect(display).toBeInTheDocument();
-      const element = screen.getByTestId('1');
-      expect(element).toBeInTheDocument();
     });
   });
 });

@@ -59,7 +59,7 @@ export default function ProfilePage() {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form data-testid="1" onSubmit={handleSubmit}>
         <div>
           <h1 data-testid="1">PROFILE:</h1>
           <div>
