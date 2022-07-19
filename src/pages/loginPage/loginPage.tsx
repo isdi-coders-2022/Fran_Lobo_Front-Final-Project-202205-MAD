@@ -79,6 +79,11 @@ export function LoginPage() {
           </Link>
         </div>
       </form>
+      <Link to={'/register'}>
+        <button className="buttonCreate" type="button">
+          Create Account
+        </button>
+      </Link>
     </div>
   );
 }

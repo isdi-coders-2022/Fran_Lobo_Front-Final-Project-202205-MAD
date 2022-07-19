@@ -135,22 +135,54 @@ button {
   color: #454545;
 }
 .notifications:after {
-  right: -4px;
-  top: -19px;
+  right: -26px;
+  top: -25px;
   content: "Login";
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
-  width: 35px;
-  height: 35px;
+  width: 42px;
+  height: 42px;
   font-size: 0.75rem;
   background-color: var(--c-green-500);
   border-radius: 50%;
   font-weight: 800;
   border: 2px solid var(--c-gray-900);
 }
+.notifications2 {
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  margin-right: 1rem;
+  position: relative;
+  transform-origin: center center;
+  transition: 0.15s ease;
+  cursor: pointer;
+}
+.notifications2:hover, .notifications:focus {
+  transform: rotate(10deg);
+}
+.notifications2 i {
+  font-size: 1.75rem;
+  color: #454545;}
 
+.notifications2:after{
+  right: -11px;
+  top: -24px;
+  content: "Logout";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  font-size: 0.75rem;
+  background-color: var(--c-yellow-500);
+  border-radius: 50%;
+  font-weight: 800;
+  border: 2px solid var(--c-gray-900);
+}
 .avatar {
   display: flex;
   justify-content: center;
@@ -395,6 +427,7 @@ button {
   width: 100%;
   margin-top: 0;
   margin-left: 0.5rem;
+  z-index: 0;
 }
 .card.horizontal .card-meta-artist {
   font-weight: 700;
@@ -613,9 +646,15 @@ button {
 text-decoration: none;
 color: #1d1d1d;
 text-align: center;
+z-index: 1;
 }
 .deleteButton{
   height: 45px;
- 
-  
+  z-index: 2;
+}
+.description{
+  font-weight: 800;
+}
+.instructions{
+  font-weight: 800;
 }

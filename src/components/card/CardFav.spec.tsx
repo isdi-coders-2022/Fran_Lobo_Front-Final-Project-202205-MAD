@@ -1,11 +1,18 @@
 import { BrowserRouter } from 'react-router-dom';
-import { iGame, iReview, iStore, iUserApi } from '../../interfaces/interfaces';
+import {
+  iGame,
+  iReview,
+  iStore,
+  iUser,
+  iUserApi,
+} from '../../interfaces/interfaces';
 import { gameReducer } from '../../reducers/games/reducer';
 import { reviewReducer } from '../../reducers/reviews/reducer';
 import { userReducer } from '../../reducers/users/reducer';
 
 import { render, screen } from '../../utils/test-utils';
 import { CardFav } from './CardFav';
+import { Card } from './index';
 
 const mockGame: iGame = {
   _id: '1',

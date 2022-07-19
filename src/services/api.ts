@@ -100,7 +100,6 @@ export class ApiGames {
   }
 
   async updateOneUser(payload: Partial<iUser>, token: string): Promise<iUser> {
-    console.log('PAYLOAD', payload);
     const resp = await fetch(`${this.apiUrl}user/` + payload._id, {
       method: 'PATCH',
       body: JSON.stringify(payload),
@@ -112,7 +111,21 @@ export class ApiGames {
     return await resp.json();
   }
 
-  async deleteOneUser(id: iUser['_id']): Promise<iUser> {
+  async deleteFav(userId: string, gameId: string, token: string) {
+    const resp = await fetch(`${this.apiUrl}user/` + userId + '/deleteFav', {
+      method: 'PATCH',
+      body: JSON.stringify({
+        gameId,
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return await resp.json();
+  }
+
+  async deleteOneUser(id: iUser['_id'], token: string): Promise<iUserApi> {
     const resp = await fetch(`${this.apiUrl}user/` + id, {
       method: 'DELETE',
     });
