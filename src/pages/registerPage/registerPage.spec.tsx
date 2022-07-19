@@ -1,31 +1,38 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
+import { Layout } from '../../components/layout/layout';
+
 import {
   iGame,
   iReview,
-  iRouterItem,
   iStore,
   iUser,
   iUserApi,
 } from '../../interfaces/interfaces';
 import { gameReducer } from '../../reducers/games/reducer';
+
 import { reviewReducer } from '../../reducers/reviews/reducer';
 import { userReducer } from '../../reducers/users/reducer';
 
 import { render, screen } from '../../utils/test-utils';
-import { Layout } from '../layout/layout';
+import RegisterPage from './RegisterPage';
 
-import { List } from './index';
-
-describe('Given the List component', () => {
+describe('Given the HomePage component', () => {
   describe('when it is called', () => {
     test('it should be rendered', () => {
       const mockGame: iGame = {
         _id: '1',
-        name: 'pepe',
-        description: 'vamos que nos vamos,',
-        url: 'franciscoLobo',
-        image: 'ewlkjdlskjcewjf',
+        name: 'leon',
+        description: 'pepepepepepepepe',
+        url: 'wqkejlakslflewnflsf',
+        image: 'qwñldekwqñdlmsañld',
+      };
+      const mockGame2: iGame = {
+        _id: '2',
+        name: 'ñlkñlkdñla',
+        description: 'wqdñlke',
+        url: 'qwñls',
+        image: 'qweñldk',
       };
 
       const reducer = {
@@ -36,20 +43,21 @@ describe('Given the List component', () => {
 
       const preloadedState: iStore = {
         user: mockGame as unknown as iUserApi,
-        games: [] as iGame[],
         reviews: [] as iReview[],
+        games: [mockGame, mockGame2] as iGame[],
       };
 
       render(
         <BrowserRouter>
-          <Layout>
-            <List data={[]} />
-          </Layout>
+          <RegisterPage />
         </BrowserRouter>,
         { preloadedState, reducer }
       );
-      const element = screen.getByTestId('1');
+
+      const element = screen.getByText(/email:/i);
       expect(element).toBeInTheDocument();
+      const element1 = screen.getByTestId('1');
+      expect(element1).toBeInTheDocument();
     });
   });
 });

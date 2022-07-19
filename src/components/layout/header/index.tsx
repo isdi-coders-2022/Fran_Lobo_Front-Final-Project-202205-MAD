@@ -1,7 +1,11 @@
+import { log } from 'console';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { iRouterItem } from '../../../interfaces/interfaces';
+import { iStore } from '../../../interfaces/interfaces';
 
 export function Header() {
+  const user = useSelector((store: iStore) => store.user);
+
   return (
     <header data-testid="1" className="header">
       <Link to={'home'}>
@@ -12,14 +16,13 @@ export function Header() {
       <div className="header-title"></div>
       <div className="header-buttons">
         <Link to={'login'}>
-          <button className="notifications">
-            <i className="ai-bell"></i>
-          </button>{' '}
+          <button className="notifications"></button>{' '}
         </Link>
-
-        <button className="avatar">
-          <img src="/images/Ejemplo.JPG" alt="" />
-        </button>
+        <Link to={'profile'}>
+          <button className="avatar">
+            <img src="/images/Ejemplo.JPG" alt="" />
+          </button>
+        </Link>
       </div>
     </header>
   );

@@ -11,6 +11,7 @@ export const userReducer = createReducer(initialState, (builder) =>
       ...state,
       userData: action.payload,
     }))
+    .addCase(actions.deleteUserAction, (state, action) => initialState)
     .addCase(actions.logout, () => initialState)
     .addDefaultCase((state) => state)
 );

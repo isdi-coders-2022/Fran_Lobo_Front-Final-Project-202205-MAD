@@ -23,7 +23,7 @@ export function CardFav({ game }: { game: iGame }) {
             </button>
           </div>
           <h2 className="card-title">{game.name}</h2>
-          <img src="/images/papelera.png" className="deleteButton" alt="" />
+          <img src="./images/papelera.png" className="deleteButton" alt="" />
         </div>
       </div>
     </article>

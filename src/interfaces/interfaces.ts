@@ -4,13 +4,13 @@ export interface iUser {
   secondName: string;
   email: string;
   password: string;
-  avatar: string;
-  playList: string[];
+  avatar?: string;
+  playList?: string[];
 }
 
 export interface iUserApi {
-  id: string;
-  token: string;
+  id?: string;
+  token?: string;
   userData: iUser;
 }
 export interface iReview {

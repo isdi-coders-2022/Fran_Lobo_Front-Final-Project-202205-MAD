@@ -150,6 +150,23 @@ button {
   font-weight: 800;
   border: 2px solid var(--c-gray-900);
 }
+.notifications2:after{
+  right: -4px;
+  top: -19px;
+  content: "Login";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  font-size: 0.75rem;
+  background-color: var(--c-yellow-500);
+  border-radius: 50%;
+  font-weight: 800;
+  border: 2px solid var(--c-gray-900);
+}
+
 
 .avatar {
   display: flex;
@@ -309,9 +326,9 @@ button {
 .navigation-item.active {
   font-weight: 800;
 }
-.navigation-item.active:before {
-  background-color: var(--c-yellow-500);
-}
+
+
+
 .navigation-item:before {
   content: "";
   display: block;
@@ -619,3 +636,10 @@ text-align: center;
  
   
 }
+.description{
+  font-weight: 800;
+}
+.instructions{
+  font-weight: 800;
+}
+

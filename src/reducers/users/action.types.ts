@@ -3,4 +3,5 @@ export enum actionTypes {
   'user@add' = 'user@add',
   'user@update' = 'user@update',
   'user@logout' = 'user@logout',
+  'user@delete' = 'user@delete',
 }
