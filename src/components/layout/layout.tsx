@@ -1,18 +1,8 @@
 import { ReactNode } from 'react';
-import { useSelector } from 'react-redux';
-import { iRouterItem, iStore } from '../../interfaces/interfaces';
 
 import { Header } from './header';
 
-export function Layout({
-  children,
-  navOptions,
-}: {
-  children: ReactNode;
-  navOptions: iRouterItem[];
-}) {
-  const user = useSelector((store: iStore) => store.user);
-
+export function Layout({ children }: { children: ReactNode }) {
   return (
     <>
       <div className="phone">

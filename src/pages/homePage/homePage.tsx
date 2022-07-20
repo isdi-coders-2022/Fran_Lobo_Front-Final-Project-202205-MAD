@@ -21,7 +21,7 @@ export default function HomePage() {
       <Search></Search>
       <NavBar></NavBar>
 
-      <h1>Our last games</h1>
+      <h1 data-testid="1">Our last games</h1>
 
       <List data={games} />
     </>

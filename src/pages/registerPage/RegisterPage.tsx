@@ -1,12 +1,16 @@
-import { SyntheticEvent, useMemo, useState } from 'react';
+import { SyntheticEvent, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-
+import { loadUserAction } from '../../reducers/users/action.creators';
+import { ApiGames } from '../../services/api';
 import { LocalStoreService } from '../../services/localStorage';
 
-export function Register() {
+export default function RegisterPage() {
+  const localStorage = new LocalStoreService();
+  const apiGames = new ApiGames();
+  const dispatcher = useDispatch();
   const navigate = useNavigate();
-  const initialState = { email: '', password: '' };
+  const initialState = { name: '', secondName: '', email: '', password: '' };
   const [formData, setFormData] = useState(initialState);
 
   const handleChange = (ev: SyntheticEvent) => {
@@ -17,36 +21,30 @@ export function Register() {
 
   const handleSubmit = async (ev: SyntheticEvent) => {
     ev.preventDefault();
-    // const apiGames = new ApiGames();
-    // const resp = await apiGames.loginUser;
-    // const reviews = await apiGames.getAllReview();
-    // const games = await apiGames.getAllGame();
 
-    // dispatcher(loadLoggedUsersAction([user]));
-    // dispatcher(loadReviewAction(reviews));
-    // dispatcher(loadGameAction(games));
-
-    // localStorage.setUser(user);
-
-    navigate(`/`);
+    apiGames.setOneUser(formData).then((user) => {
+      dispatcher(loadUserAction(user));
+      localStorage.setUser(user);
+      navigate(`/`);
+    });
   };
 
   return (
     <div>
       <form onSubmit={handleSubmit}>
         <div>
-          <h1>REGISTER</h1>
+          <h1 data-testid="1">REGISTER</h1>
           <div>
             <label htmlFor="">Name:</label>
           </div>
           <div>
-            <input type="text" name="email" onChange={handleChange} />
+            <input type="text" name="name" onChange={handleChange} />
           </div>
           <div>
             <label htmlFor="">Second Name:</label>
           </div>
           <div>
-            <input type="text" name="email" onChange={handleChange} />
+            <input type="text" name="secondName" onChange={handleChange} />
           </div>
           <div>
             <label htmlFor="">Email:</label>

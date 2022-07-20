@@ -2,12 +2,12 @@ import { iUserApi } from '../interfaces/interfaces';
 
 export class LocalStoreService {
   user: string;
-  users: string;
-  rooms: string;
+  games: string;
+  reviews: string;
   constructor() {
     this.user = 'User';
-    this.users = 'Users';
-    this.rooms = 'Rooms';
+    this.games = 'Games';
+    this.reviews = 'Reviews';
   }
 
   getUser(): iUserApi {
@@ -25,8 +25,8 @@ export class LocalStoreService {
   }
 
   getUsers(): iUserApi[] {
-    return localStorage.getItem(this.users)
-      ? JSON.parse(localStorage.getItem(this.users) as string)
+    return localStorage.getItem(this.user)
+      ? JSON.parse(localStorage.getItem(this.user) as string)
       : '';
   }
 }

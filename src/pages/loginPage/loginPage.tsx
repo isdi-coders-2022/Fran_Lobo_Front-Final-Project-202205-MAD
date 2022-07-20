@@ -40,7 +40,7 @@ export function LoginPage() {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form data-testid="1" onSubmit={handleSubmit}>
         <div>
           <div>
             <label htmlFor="">Email</label>
@@ -73,11 +73,7 @@ export function LoginPage() {
           </div>
         </div>
         <p>Don´t you have an account? </p>
-        <div>
-          <Link to={'/register'}>
-            <button type="button">Create Account</button>
-          </Link>
-        </div>
+        <div></div>
       </form>
       <Link to={'/register'}>
         <button className="buttonCreate" type="button">

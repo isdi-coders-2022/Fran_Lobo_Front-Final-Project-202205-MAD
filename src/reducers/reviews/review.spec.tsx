@@ -48,10 +48,10 @@ describe('Given Review reducer', () => {
         mockedArray,
         actions.updateReviewAction({
           ...mockedArray[0],
-          name: 'test',
+          text: 'test',
         })
       );
-      expect(newState.find((item) => item._id === '1')?.name).toEqual('test');
+      expect(newState.find((item) => item._id === '1')?.text).toEqual('test');
     });
   });
   describe('When calling it with delete action with a review', () => {

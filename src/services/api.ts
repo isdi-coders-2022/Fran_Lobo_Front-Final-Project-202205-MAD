@@ -1,4 +1,3 @@
-import { log } from 'console';
 import { iGame, iReview, iUser, iUserApi } from '../interfaces/interfaces';
 
 export class ApiGames {
@@ -59,7 +58,7 @@ export class ApiGames {
     return await resp.json();
   }
 
-  async setOneUser(payload: iUser): Promise<iUser> {
+  async setOneUser(payload: iUser): Promise<iUserApi> {
     const resp = await fetch(`${this.apiUrl}user/`, {
       method: 'POST',
       body: JSON.stringify(payload),
@@ -128,6 +127,9 @@ export class ApiGames {
   async deleteOneUser(id: iUser['_id'], token: string): Promise<iUserApi> {
     const resp = await fetch(`${this.apiUrl}user/` + id, {
       method: 'DELETE',
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
     });
     return await resp.json();
   }

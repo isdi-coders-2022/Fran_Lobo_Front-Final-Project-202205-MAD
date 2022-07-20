@@ -3,7 +3,7 @@ import { NavBar } from '../../components/layout/nav-bar';
 import { List } from '../../components/list';
 import { iStore } from '../../interfaces/interfaces';
 
-export default function HomePage() {
+export default function RankingPage() {
   return (
     <>
       <NavBar></NavBar>
@@ -76,7 +76,6 @@ export default function HomePage() {
           <span className="card-pin simple"></span>
         </div>
       </article>
-      {/*} <List data={games} />*/}
     </>
   );
 }
