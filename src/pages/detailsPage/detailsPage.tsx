@@ -28,18 +28,28 @@ export default function DetailsPage() {
         dispatch(updateUserAction(resp));
       });
   };
-
+  const fav = user.userData.playList?.some((idFav) => idFav === id);
+  console.log(fav);
   return (
     <>
       <div data-testid="1" className="details-page">
         <div className="wrappperFavoriteButton">
           <h1>{game?.name}</h1>
-          <img
-            onClick={addFavourite}
-            src="/images/favorito.png"
-            className="favouriteButton"
-            alt=""
-          />
+          {fav ? (
+            <img
+              onClick={addFavourite}
+              src="/images/estrella.png"
+              className="favouriteButton"
+              alt=""
+            />
+          ) : (
+            <img
+              onClick={addFavourite}
+              src="/images/favorito.png"
+              className="favouriteButton"
+              alt=""
+            />
+          )}
         </div>
 
         <img className="imageGame" src={game?.image} alt={game?.name} />

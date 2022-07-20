@@ -12,8 +12,9 @@ import { gameReducer } from '../../reducers/games/reducer';
 
 import { reviewReducer } from '../../reducers/reviews/reducer';
 import { userReducer } from '../../reducers/users/reducer';
+import { ApiGames } from '../../services/api';
 
-import { render, screen } from '../../utils/test-utils';
+import { fireEvent, render, screen } from '../../utils/test-utils';
 import ProfilePage from './profilePage';
 
 describe('Given the LoginPage component', () => {

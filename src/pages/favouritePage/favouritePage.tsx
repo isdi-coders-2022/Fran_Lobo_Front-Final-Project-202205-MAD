@@ -19,8 +19,6 @@ export function FavouritePage() {
     user.playList?.some((id) => game._id === id)
   );
 
-  console.log(games);
-
   return (
     <>
       <NavBar></NavBar>

@@ -30,7 +30,7 @@ const preloadedState: iStore = {
 
 describe('Given the LoginPage component', () => {
   describe('when it is called', () => {
-    test('it should be rendered', async () => {
+    test('it should be rendered by submit ', async () => {
       render(
         <BrowserRouter>
           <LoginPage />
@@ -48,7 +48,7 @@ describe('Given the LoginPage component', () => {
       expect(result).toHaveBeenCalled();
     });
   });
-  describe('when it is ca', () => {
+  describe('when it is call', () => {
     test('it should be rendered handleChange', async () => {
       render(
         <BrowserRouter>
